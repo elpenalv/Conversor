@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C97ADD4D-2BA6-4F05-B037-D9363339C569}</ProjectGuid>
+    <ProjectGuid>{5CE68BC1-9144-47F4-B745-37E70AAA3E7E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modelon</RootNamespace>
-    <AssemblyName>Modelon</AssemblyName>
+    <RootNamespace>PresentacionConsola</RootNamespace>
+    <AssemblyName>PresentacionConsola</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColeccionDivisa.cs" />
-    <Compile Include="Conversor.cs" />
+    <Compile Include="Consola.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModeloNegocio\ModeloDominio.csproj">
       <Project>{b7a8564e-5486-43fe-8089-10bac96e4074}</Project>
       <Name>ModeloDominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelon\ModeloNegocio.csproj">
+      <Project>{c97add4d-2ba6-4f05-b037-d9363339c569}</Project>
+      <Name>ModeloNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

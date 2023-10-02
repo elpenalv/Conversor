@@ -13,6 +13,12 @@ namespace ModeloNegocio
         private ColeccionDivisas coleccion;
         private Divisa divRef;
 
+        public ColeccionDivisas GetDivisas() { 
+
+        return coleccion;
+
+        }
+        
         public Conversor(ColeccionDivisas coleccionDivisas, Divisa divisaBase)
         {
             this.coleccion = coleccionDivisas;
@@ -32,7 +38,8 @@ namespace ModeloNegocio
             double cantidadEnDivisaBase = divRef.cambio /  divisaDe.cambio ;
             double cantidadConvertida = cantidadEnDivisaBase *  divisaE.cambio;
 
-            return cantidadConvertida *cantidad;
+            return cantidadConvertida * cantidad;
         }
+      
     }
 }
