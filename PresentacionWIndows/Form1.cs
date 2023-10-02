@@ -21,15 +21,15 @@ namespace PresentacionWIndows
         }
         public Form1(Conversor c) : base() {
 
-
+            InitializeComponent();
             foreach (Divisa s in c.GetDivisas())
             {
-                listBox1.Items.Add(s.id);
+                lB1.Items.Add(s.id);
             }
 
             foreach (Divisa s in c.GetDivisas())
             {
-                listBox2.Items.Add(s.id);
+                lB2.Items.Add(s.id);
             }
 
             this.c = c;
@@ -46,9 +46,29 @@ namespace PresentacionWIndows
 
         private void button1_Click(object sender, EventArgs e)
         {
+            double cantidad = 0;
+
+            bool verdad = double.TryParse(textBox1.Text, out cantidad);
+            if (verdad || cantidad >=0)
+            {
+                Divisa divi1 = c.GetDivisas()[lB1.SelectedItem.ToString()];
+                Divisa divi2 = c.GetDivisas()[lB2.SelectedItem.ToString()];
+
+                double resultado = this.c.Convertir(divi1, divi2, cantidad);
+                string valorFormateado = resultado.ToString("N2");
+                textBox2.Text = valorFormateado;
+            }
+            else
+            {
+                MessageBox.Show("Introduce la cantidad correctamente");
+            }
 
 
+        }
 
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

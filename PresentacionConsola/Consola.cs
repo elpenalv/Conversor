@@ -23,7 +23,7 @@ namespace PresentacionConsola
             s1 = System.Console.ReadLine();
             while (!c.GetDivisas().Contains(s1))
             {
-                System.Console.WriteLine("Divisa no encontrada, introduzca una valida");
+                System.Console.WriteLine("Divisa no encontrada, introduzca una otra");
                 s1 = System.Console.ReadLine();
             }
 
@@ -33,7 +33,7 @@ namespace PresentacionConsola
 
             while (!c.GetDivisas().Contains(s2))
             {
-                System.Console.WriteLine("Divisa no encontrada, introduzca una valida");
+                System.Console.WriteLine("Divisa no encontrada, introduzca una otra");
                 s2 = System.Console.ReadLine();
             }
 

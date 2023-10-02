@@ -30,8 +30,8 @@
         {
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lB1 = new System.Windows.Forms.ListBox();
+            this.lB2 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -54,24 +54,25 @@
             this.btn2.TabIndex = 1;
             this.btn2.Text = "Salir";
             this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
-            // listBox1
+            // lB1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(234, 73);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 84);
-            this.listBox1.TabIndex = 2;
+            this.lB1.FormattingEnabled = true;
+            this.lB1.ItemHeight = 16;
+            this.lB1.Location = new System.Drawing.Point(234, 73);
+            this.lB1.Name = "lB1";
+            this.lB1.Size = new System.Drawing.Size(120, 84);
+            this.lB1.TabIndex = 2;
             // 
-            // listBox2
+            // lB2
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(439, 73);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 84);
-            this.listBox2.TabIndex = 3;
+            this.lB2.FormattingEnabled = true;
+            this.lB2.ItemHeight = 16;
+            this.lB2.Location = new System.Drawing.Point(439, 73);
+            this.lB2.Name = "lB2";
+            this.lB2.Size = new System.Drawing.Size(120, 84);
+            this.lB2.TabIndex = 3;
             // 
             // textBox1
             // 
@@ -83,6 +84,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(460, 217);
+            this.textBox2.MaxLength = 2000;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 22);
@@ -95,8 +97,8 @@
             this.ClientSize = new System.Drawing.Size(616, 374);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lB2);
+            this.Controls.Add(this.lB1);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
             this.Name = "Form1";
@@ -111,8 +113,8 @@
 
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lB1;
+        private System.Windows.Forms.ListBox lB2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
     }
