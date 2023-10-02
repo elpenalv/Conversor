@@ -21,7 +21,18 @@ namespace PresentacionWIndows
         }
         public Form1(Conversor c) : base() {
 
-        this.c = c;
+
+            foreach (Divisa s in c.GetDivisas())
+            {
+                listBox1.Items.Add(s.id);
+            }
+
+            foreach (Divisa s in c.GetDivisas())
+            {
+                listBox2.Items.Add(s.id);
+            }
+
+            this.c = c;
 
 
         }
@@ -33,7 +44,11 @@ namespace PresentacionWIndows
 
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+
+
+        }
     }
 }
