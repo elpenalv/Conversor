@@ -10,15 +10,18 @@ namespace ModeloNegocio
 {
     public class Conversor
     {
+        // Campos privados
         private ColeccionDivisas coleccion;
         private Divisa divRef;
 
+
+        // Método para obtener la colección de divisas
         public ColeccionDivisas GetDivisas() { 
 
         return coleccion;
 
         }
-        
+        //Constructor   
         public Conversor(ColeccionDivisas coleccionDivisas, Divisa divisaBase)
         {
             this.coleccion = coleccionDivisas;
@@ -26,11 +29,11 @@ namespace ModeloNegocio
         }
 
         /// <summary>
-        /// 
+        ///  Método para realizar una conversión de divisa
         /// </summary>
-        /// <param name="divisaDe"></param>
-        /// <param name="divisaE"></param>
-        /// <param name="cantidad"></param>
+        /// <param name="divisaDe"> Divisa de entrada</param>
+        /// <param name="divisaE">Divisa de salida</param>
+        /// <param name="cantidad">Cantidad a convertir</param>
         /// <returns></returns>
         public double Convertir(Divisa divisaDe, Divisa divisaE, double cantidad)
         {

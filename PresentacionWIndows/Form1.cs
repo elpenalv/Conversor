@@ -19,6 +19,11 @@ namespace PresentacionWIndows
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Constructor que le pasamos un conversor con divisas ya introducidas
+        /// </summary>
+        /// <param name="c"></param>
         public Form1(Conversor c) : base() {
 
             InitializeComponent();
@@ -43,29 +48,46 @@ namespace PresentacionWIndows
         {
 
         }
-
+        /// <summary>
+        /// Funcion del boton, controlamos que la cantidad que introducimos sea valida y no sea negativa, sino mostramos error.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             double cantidad = 0;
 
-            bool verdad = double.TryParse(textBox1.Text, out cantidad);
-            if (verdad || cantidad >=0)
-            {
-                Divisa divi1 = c.GetDivisas()[lB1.SelectedItem.ToString()];
-                Divisa divi2 = c.GetDivisas()[lB2.SelectedItem.ToString()];
+            bool cantidadValida = double.TryParse(textBox1.Text, out cantidad);
 
-                double resultado = this.c.Convertir(divi1, divi2, cantidad);
-                string valorFormateado = resultado.ToString("N2");
-                textBox2.Text = valorFormateado;
+            if (cantidadValida && cantidad >= 0)
+            {
+                if (lB1.SelectedItem == null || lB2.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecciona las divisas de origen y destino.");
+                }
+                else
+                {
+                    string divisaOrigen = lB1.SelectedItem.ToString();
+                    string divisaDestino = lB2.SelectedItem.ToString();
+
+                    Divisa divi1 = c.GetDivisas()[divisaOrigen];
+                    Divisa divi2 = c.GetDivisas()[divisaDestino];
+
+                    double resultado = this.c.Convertir(divi1, divi2, cantidad);
+                    string valorFormateado = resultado.ToString("N2");
+                    textBox2.Text = valorFormateado;
+                }
             }
             else
             {
-                MessageBox.Show("Introduce la cantidad correctamente");
+                MessageBox.Show("Introduce una cantidad válida mayor o igual a cero.");
             }
-
-
         }
-
+        /// <summary>
+        /// Boton para salir de la Aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn2_Click(object sender, EventArgs e)
         {
             Application.Exit();

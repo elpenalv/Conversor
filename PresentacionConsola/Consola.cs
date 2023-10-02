@@ -49,8 +49,7 @@ namespace PresentacionConsola
             }
 
             double cantidad = c.Convertir(c.GetDivisas()[s1], c.GetDivisas()[s2], cant);
-            System.Console.WriteLine("El resultado es: ");
-            System.Console.WriteLine(cantidad);
+            System.Console.WriteLine("El resultado es: " + cantidad);
 
             s2 = System.Console.ReadLine();
 
